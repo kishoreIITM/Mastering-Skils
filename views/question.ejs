@@ -11,7 +11,7 @@
     <%- include('nav',{token:token}) %>
     <% if (admin) {%>
     <h1>Add a question</h1>
-    <form class="container" action=<%= "https://localhost:3443/" + subject %> method="POST" >
+    <form class="container" action=<%= "https://masteringskills.herokuapp.com/" + subject %> method="POST" >
         <div class=form-group>
             <label for="question">QUESTION</label>
             <textarea class="form-control" id="question" name="question"></textarea>            
@@ -45,7 +45,7 @@
         <h4>Q[<%= i+1 %>]  <%= questions[i].question %></h4> 
         <p>-----------author: <%=questions[i].author.username %></p>
         <%if(username==questions[i].author.username){%>
-            <form action= <%= "https://localhost:3443/"+subject+"/delete/"+ questions[i].id %> method="POST">
+            <form action= <%= "https://masteringskills.herokuapp.com/"+subject+"/delete/"+ questions[i].id %> method="POST">
             <button type="submit" class="btn btn-secondary" type="submit">Delete</button>
             </form>
        <% } %>

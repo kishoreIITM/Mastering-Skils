@@ -57,7 +57,7 @@ router.route('/delete/:id')
         if(q.author._id==req.user._id){
             questmodel.remove({_id:req.params.id})
             .then((resp)=>{
-                res.redirect('https://localhost:3443/math')
+                res.redirect('https://masteringskills.herokuapp.com/math')
             })
             .catch((err)=>{
                 return next(err)

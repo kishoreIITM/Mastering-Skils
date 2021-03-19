@@ -56,7 +56,7 @@ router.route('/delete/:id')
         if(q.author._id==req.user._id){
             questmodel.remove({_id:req.params.id})
             .then((resp)=>{
-                res.redirect('https://localhost:3443/chemistry')
+                res.redirect('https://masteringskills.herokuapp.com/chemistry')
             })
             .catch((err)=>{
                 return next(err)
