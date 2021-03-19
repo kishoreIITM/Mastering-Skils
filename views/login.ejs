@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <title>Log In</title>
+</head>
+<body>
+    <%- include('nav',{token:false}) %>
+    <form class="container" method="POST" action="https://localhost:3443/users/login">
+        <label>
+            username
+        </label>
+        <input class="form-control" name="username">
+        <label>password</label>
+        <input class="form-control" type="password" name="password">
+        <br>
+        <button class="form-control btn btn-primary" type="submit">Log In</button>
+        
+    </form>
+</body>
+</html>

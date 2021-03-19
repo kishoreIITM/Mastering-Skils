@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <title>Questions</title>
+</head>
+<body>
+    <%- include('nav',{token:token}) %>
+    <% if (admin) {%>
+    <h1>Add a question</h1>
+    <form class="container" action=<%= "https://localhost:3443/" + subject %> method="POST" >
+        <div class=form-group>
+            <label for="question">QUESTION</label>
+            <textarea class="form-control" id="question" name="question"></textarea>            
+        </div>
+        <div class=form-group>
+            <label>Option A</label>
+            <input class="form-control"  name="option1">            
+        </div>
+        <div class=form-group>
+            <label>Option B</label>
+            <input class="form-control"  name="option2">
+        </div>            
+        <div class=form-group>
+            <label>Option C</label>
+            <input class="form-control"  name="option3">
+        </div>
+        <div class=form-group>
+            <label>Option D</label>
+            <input class="form-control"  name="option4">
+        </div>
+        <div class=form-group>
+            <label>Answer</label>
+            <input class="form-control"  name="answer">
+        </div>
+        <div class=form-group>
+            <button class="btn btn-primary form-control"  type="submit">SUBMIT</button>
+        </div>
+    </form>
+    <%}%>
+    <% for (var i=0; i< questions.length; i++ ){%>
+        <h4>Q[<%= i+1 %>]  <%= questions[i].question %></h4> 
+        <p>-----------author: <%=questions[i].author.username %></p>
+        <%if(username==questions[i].author.username){%>
+            <form action= <%= "https://localhost:3443/"+subject+"/delete/"+ questions[i].id %> method="POST">
+            <button type="submit" class="btn btn-secondary" type="submit">Delete</button>
+            </form>
+       <% } %>
+       
+    <% } %>
+</body>
+</html>

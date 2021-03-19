@@ -1,0 +1,26 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="https://localhost:3443/">Mastering Skills</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <% if(!token){ %>
+          <li class="nav-item"><a class="nav-link" href="https://localhost:3443/users/signup">Sign Up</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://localhost:3443/users/login">Log IN</a></li>
+          </li>
+        <% } %> 
+
+        <% if(token){ %>
+          <li class="nav-item"><a class="nav-link" href="https://localhost:3443/users/registeredusers">Registered Users</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://localhost:3443/math">Math</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://localhost:3443/chemistry">Chemistry</a></li>
+          <li class="nav-item"><a class="nav-link"  href="https://localhost:3443/physics">Pysics</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://localhost:3443/users/delete">Delete users </a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://localhost:3443/users/logout">LOGOUT</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </nav>
