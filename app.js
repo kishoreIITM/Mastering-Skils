@@ -24,7 +24,7 @@ app.all('*',(req,res,next)=>{
 })
 
 
-const url = "mongodb://localhost:27017/mkills";
+const url = "mongodb+srv://kishore:MfmqdzsSD3XDrQL@cluster0.chf4z.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const connect = mongoose.connect(url,{
   useNewUrlParser:true,
   useUnifiedTopology:true
