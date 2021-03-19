@@ -7,14 +7,13 @@
 var app = require('../app');
 var debug = require('debug')('backend:server');
 var http = require('http');
-var https = require('https');
 var fs = require('fs');
 const { options } = require('../app');
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '3443');
 app.set('port', port);
 
 /**
@@ -26,7 +25,6 @@ var options1 = {
 }
 
 var server = http.createServer(app);
-var secureserver = https.createServer(options1,app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -35,8 +33,6 @@ var secureserver = https.createServer(options1,app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
-secureserver.listen(port+443);
-secureserver.on('error', onError);
 
 
 

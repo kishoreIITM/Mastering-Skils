@@ -14,14 +14,6 @@ var phyRouter = require('./routes/phy');
 var chemRouter = require('./routes/chem');
 var app = express();
 app.use(passport.initialize());
-app.all('*',(req,res,next)=>{
-  if(req.secure){
-    next()
-  }
-  else{
-    res.redirect('https://localhost:3443');
-  }
-})
 
 
 const url = "mongodb+srv://kishore:MfmqdzsSD3XDrQL@cluster0.chf4z.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
