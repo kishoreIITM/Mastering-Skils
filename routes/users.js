@@ -40,7 +40,7 @@ router.route('/signup')
       const tok = jwt.sign({_id :req.user._id,username:req.user.username},'TOP_SECRET',{expiresIn:'2h'});
       res.statusCode=200;
       res.cookie('token',tok,{httpOnly:true,secure:true});
-      res.redirect('https://localhost:3443');
+      res.redirect('/');
     })
   })
   .catch((err)=>{
