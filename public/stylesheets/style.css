@@ -12,3 +12,8 @@ nav{
 a {
   color: #00B7FF;
 }
+@media(max-width:768px){
+  nav{
+      background: rgb(5, 8, 12);
+  }
+}
