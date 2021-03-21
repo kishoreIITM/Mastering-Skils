@@ -2,7 +2,9 @@ const passport = require('passport');
 const localstrategy = require('passport-local');
 const users = require('./models/user');
 const jwtstrategy= require('passport-jwt').Strategy;
-const extractjwt=require('passport-jwt').ExtractJwt
+const extractjwt=require('passport-jwt').ExtractJwt;
+const strategy = require('passport-facebook');
+const facebookStrategy = strategy.Strategy
 
 //HANDLING SIGN UO AUTHENTICATION 
 passport.use('signup', new localstrategy(
@@ -46,4 +48,12 @@ passport.use(new jwtstrategy({
     return done(null,token)
 }))
 
-
+passport.use(new facebookStrategy({
+    clientID:"795987001125649",
+    clientSecret:"0b382ed54d67f4a9c82c6999ddf2d114",
+    callbackURL:"http://localhost:3443/users/auth/facebook/callback",
+    profileFields:["email","name"]
+},function(accessToken,refreshToken,profile,done){
+    console.log(profile)
+    done(null,profile);
+}))
