@@ -51,7 +51,7 @@ passport.use(new jwtstrategy({
 passport.use(new facebookStrategy({
     clientID:"795987001125649",
     clientSecret:"0b382ed54d67f4a9c82c6999ddf2d114",
-    callbackURL:"http://localhost:3443/users/auth/facebook/callback",
+    callbackURL:"https://masteringskills.herokuapp.com/users/auth/facebook/callback",
     profileFields:["email","name"]
 },function(accessToken,refreshToken,profile,done){
     console.log(profile)
